@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff5f6d,#ffc371);
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+.box{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  width:300px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  cursor:pointer;
+  margin:10px;
+}
+#yes{
+  background:#ff4d6d;
+  color:white;
+}
+#no{
+  background:#ccc;
+  position:absolute;
+}
+.kiss{
+  font-size:45px;
+  animation:kiss 1s infinite alternate;
+}
+@keyframes kiss{
+  from{transform:scale(1);}
+  to{transform:scale(1.2);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="ask">
+  <h2>Hey ❤️ YOUR_NAME</h2>
+  <p>Will you be my girlfriend?</p>
+  <button id="yes" onclick="yes()">Yes 😍</button>
+  <button id="no" onmouseover="run()">No 🙈</button>
+</div>
+
+<div class="box" id="done" style="display:none;">
+  <h2>Congratulations 🎉</h2>
+  <p>I love you forever ❤️</p>
+  <div class="kiss">💋💋</div>
+</div>
+
+<script>
+function run(){
+  const no=document.getElementById("no");
+  no.style.left=Math.random()*(window.innerWidth-100)+"px";
+  no.style.top=Math.random()*(window.innerHeight-100)+"px";
+}
+function yes(){
+  document.getElementById("ask").style.display="none";
+  document.getElementById("done").style.display="block";
+}
+</script>
+
+</body>
+</html>
